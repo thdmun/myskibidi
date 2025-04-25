@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Đếm Ngược</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            color: #3498db;
+        }
+        .countdown {
+            font-size: 48px;
+            color: #e74c3c;
+            font-weight: bold;
+        }
+        .message {
+            margin-top: 20px;
+            font-size: 20px;
+            color: #2c3e50;
+        }
+        .footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #34495e;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Đang Chuyển Hướng...</h1>
+    <p class="message">Vui lòng đợi trong <span id="countdown" class="countdown">60</span> giây</p>
+    <p class="message">Chúng tôi sẽ chuyển bạn đến trang đích ngay sau khi hết thời gian.</p>
+
+    <div class="footer">
+        <p>&copy; 2025 Trang Web Của Tôi</p>
+    </div>
+
+    <script>
+        // Thời gian đếm ngược (giây)
+        let countdown = 120;
+        let countdownElement = document.getElementById('countdown');
+
+        // Hàm để thực hiện đếm ngược
+        let countdownInterval = setInterval(function() {
+            countdown--;  // Giảm số giây
+            countdownElement.textContent = countdown;  // Cập nhật hiển thị
+
+            // Khi đếm ngược hết thời gian, chuyển hướng người dùng
+            if (countdown <= 0) {
+                clearInterval(countdownInterval);  // Dừng đếm ngược
+                window.location.href = "https://8xbet-app.cc/"; // Đường link đích
+            }
+        }, 1000);  // Cập nhật mỗi giây (1000ms)
+    </script>
+
+</body>
+</html>
